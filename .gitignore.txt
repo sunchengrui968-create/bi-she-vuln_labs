@@ -1,0 +1,13 @@
+# 用户上传的文件（靶场运行时产生，不必备份）
+uploads/*
+!uploads/README.txt
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 日志、临时文件
+*.log
+*.tmp
